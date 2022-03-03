@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FPTBookstore.Models.Data.Author>
+
+@{
+    ViewBag.Title = "ShowListAuthor";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Author management</h2>
+
+<p>
+    @Html.ActionLink("Adding author", "AddAuthor")
+</p>
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                Author ID
+            </th>
+            <th>
+                Author Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="row_@item.AuthorID">
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuthorID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuthorName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdateAuthor", new { id = item.AuthorID }) |
+                    @Ajax.ActionLink("Delete", "DeleteAuthor", new { id = item.AuthorID }, new AjaxOptions
+               {
+                   Confirm = "Do you want to delete this author?",
+                   OnComplete = "$('#row_" + @item.AuthorID + "').remove()",
+                   HttpMethod = "Delete"
+               })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

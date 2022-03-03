@@ -1,0 +1,97 @@
+﻿@model FPTBookstore.Models.Data.Book
+
+@{
+    ViewBag.Title = "DetailsBook";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@Model.BookName</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+        <dt>
+            Publisher
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher.PublisherName)
+        </dd>
+
+        <dt>
+            Author
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author.AuthorName)
+        </dd>
+
+        <dt>
+            Category
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            <p><span>@(Model.Price.HasValue ? Model.Price.Value.ToString("N0") : "Contact")</span> USD</p>
+        </dd>
+
+        <dt>
+            Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Translator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Translator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="/images/@Model.Image" width="180" height="250" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateUpdate)
+        </dt>
+
+        <dd>
+            @String.Format("{0:dd/MM/yyyy}", Model.DateUpdate)
+        </dd>
+
+        <dt>
+            Inventory
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inventory)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Return", "ShowListBook") |
+    @Html.ActionLink("Edit", "UpdateBook", new { id = Model.BookID })
+</p>

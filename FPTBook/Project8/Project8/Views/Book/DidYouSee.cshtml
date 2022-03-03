@@ -1,0 +1,27 @@
+﻿@model IEnumerable<FPTBookstore.Models.Data.Book>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <a title="@item.BookName" href="/Book/Details/@item.BookID">
+                <img src="/images/@item.Image" alt="@item.Image" width="180" height="250" />
+            </a>
+            <div class="caption">
+                <h4>
+                    <a title="@item.BookName" href="/Book/Details/@item.BookID" style="color:#087BB0;">@(item.BookName.Length > 26 ? item.BookName.Substring(0, 22) + "..." : item.BookName)</a>
+                </h4>
+                <a style="color:black" class="btn btn-warning" href="/Cart/AddItem/?id=@item.BookID&quantity=1">Buying product</a>
+                @if (item.Price > 0)
+                {
+                    <h4 class="pull-right" style="color:black;">@item.Price.Value.ToString("N0") USD</h4>
+                }
+                else
+                {
+                    <h4 class="pull-right" style="color:red;">Contact</h4>
+                }
+            </div>
+        </div>
+    </div>
+}
+

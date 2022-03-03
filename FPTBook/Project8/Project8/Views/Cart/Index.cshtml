@@ -1,0 +1,77 @@
+﻿@model List<FPTBookstore.Models.CartModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section jsFooter{
+
+    <script src="/Content/Client/js/controller/cartController.js"></script>
+}
+
+<h2 style="margin-bottom: 20px;">Your cart</h2>
+@if (Model.Count > 0)
+{
+    <table id="cart" class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th style="width:50%">Product</th>
+                <th style="width:10%">Price</th>
+                <th style="width:8%">Quantity</th>
+                <th style="width:22%" class="text-center">Subtotal</th>
+                <th style="width:10%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs"><img src="~/images/@item.book.Image" alt="@item.book.Image" class="img-responsive" /></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">@item.book.BookName</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">@item.book.Price.GetValueOrDefault(0).ToString("N0") USD</td>
+                    <td data-th="Quantity">
+                        <input type="number" class="txtQuantity" data-id="@item.book.BookID" value="@item.Quantity">
+                    </td>
+                    <td data-th="Subtotal" class="text-center">@((item.book.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0")) USD</td>
+                    <td class="actions" data-th="">
+                        @*delete button*@
+                        <button id="btnDelete" data-id="@item.book.BookID" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                        @*end delete button*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr class="visible-xs">
+                <td class="text-center"><strong>Total 1.99</strong></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/Home/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue shopping</a>
+                    @*update button*@
+                    <button id="btnUpdate" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i> Update</button>
+                    @*end update button*@
+                    @*delete button*@
+                    <button id="btnDeleteAll" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i> Delete all</button>
+                    @*end delete button*@
+                </td>
+                <td colspan="2" class="hidden-xs"></td>
+                <td class="hidden-xs text-center"><strong>Total: @String.Format("{0:0,0}", ViewBag.Total) USD</strong></td>
+                <td><a href="/Cart/Payment" class="btn btn-success btn-block">Payment <i class="fa fa-angle-right"></i></a></td>
+            </tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <span class="alert alert-danger">There are no products in the cart</span>
+    <br />
+    <a href="/Home/" style="margin-top: 20px;" class="btn btn-warning"> Continue shopping</a>
+}
+
+

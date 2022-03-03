@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FPTBookstore.Models.Data.OrderDetail>
+
+@{
+    ViewBag.Title = "DetailsOrder";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Order detail</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.OrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Book.BookName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.OrderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            <p>@String.Format("{0:0,0}", item.Price) USD</p>
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Return", "Order")
+</div>

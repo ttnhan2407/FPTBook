@@ -1,0 +1,45 @@
+﻿@model FPTBookstore.Models.Data.Book
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div style="float:left; margin-right:15px; margin-left:80px;" class="span5">
+        <img src="/images/@Model.Image" alt="@Model.Image" title="@Model.BookName" width="250" height="360" />
+    </div>
+    <div style="max-width:600px; float:left;" class="span7">
+        <h2>@Model.BookName</h2>
+        <h4 class="muted">Category : @Model.Category.CategoryName - Author: @Model.Author.AuthorName</h4>
+        <p>Publisher : @Model.Publisher.PublisherName</p>
+        <p>@Model.Description </p>
+        <hr>
+        @if(Model.Inventory > 0)
+        {
+            <p>Status: In stock</p>
+        }
+        else
+        {
+            <p>Status: Contact</p>
+        }
+        @if (Model.Price > 0)
+        {
+            <h3>Price - @Model.Price.Value.ToString("N0") USD</h3>
+        }
+        else
+        {
+            <h3>Price - Contact</h3>
+        }
+        <br>
+        <p><a href="/Cart/AddItem/?id=@Model.BookID&quantity=1" class="btn btn-warning btn-large">Add To Cart</a></p>
+    </div>
+</div>
+
+<hr />
+<h3>Best selling book</h3>
+<div class="row">
+    @Html.Action("FavoriteBook", "Book")
+</div>
+
+

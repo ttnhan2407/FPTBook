@@ -1,0 +1,66 @@
+﻿@model IEnumerable<FPTBookstore.Models.Data.Order>
+
+@{ ViewBag.Title = "Order";
+                Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml"; }
+
+<h2>Order Management</h2>
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr id="row_@item.OrderID">
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateStart)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateEnd)
+    </td>
+    <td>
+        <a href="#">@(item.OrderStatus ? "Not delivery" : "Delivered")</a>
+    </td>
+    <td>
+        @Html.DropDownList("Tracking", new List<SelectListItem>
+{
+                        new SelectListItem() {Text = "Processed", Value="0"},
+                        new SelectListItem() {Text = "Packaged", Value="1"},
+                        new SelectListItem() {Text = "Delivering", Value="2"},
+                        new SelectListItem() {Text = "Delivery Success", Value="3"}
+    })
+    </td>
+    <td>
+        @Html.ActionLink("View", "DetailsOrder", new { id = item.OrderID })
+    </td>
+</tr>}
+    </tbody>
+
+
+</table>

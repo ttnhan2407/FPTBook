@@ -1,0 +1,50 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<FPTBookstore.Models.Data.Book>
+
+@{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-3" style="border-radius: 26px;border: 1px solid #dea3a3;   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);">
+        <p style="text-align: center; margin: 5px;font-size: 25px;font-weight: 600;"><i aria-hidden="true"></i><font style="color:#087BB0; text-align:center"> Product category</font></p>
+        @Html.Action("ShowCategory", "Home")
+    </div>
+    <div class="col-md-9">
+        <h3>Search results</h3>
+        <p>@ViewBag.Notification</p>
+        <hr />        
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <a title="@item.BookName" href="/Book/Details/@item.BookID">
+                            <img src="/images/@item.Image" alt="@item.Image" width="180" height="250" />
+                        </a>
+                        <div class="caption">
+                            <h4>
+                                <a title="@item.BookName" href="/Book/Details/@item.BookID" style="color:#087BB0;">@(item.BookName.Length > 26 ? item.BookName.Substring(0, 22) + "..." : item.BookName)</a>
+                            </h4>
+                            <a style="color:black" class="btn btn-warning" href="/Cart/AddItem/?id=@item.BookID&quantity=1">Buying product</a>
+                            @if (item.Price > 0)
+                            {
+                                <h4 class="pull-right" style="color:black;">@item.Price.Value.ToString("N0") USD</h4>
+                            }
+                            else
+                            {
+                                <h4 class="pull-right" style="color:red;">Contact</h4>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        @*create page link link*@
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("SearchResult", new { page = page, @key = ViewBag.Key }))
+    </div>
+</div>
