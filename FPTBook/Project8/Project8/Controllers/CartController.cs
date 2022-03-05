@@ -238,8 +238,7 @@ namespace FPTBookstore.Controllers
                         orderDetail.Price = item.book.Price;
                         result2.Insert(orderDetail);
 
-                        total = cart.Sum(x => x.Total);
-                        
+                        total = cart.Sum(x => x.Total);                        
                     }
 
                     Session[CartSession] = null;
