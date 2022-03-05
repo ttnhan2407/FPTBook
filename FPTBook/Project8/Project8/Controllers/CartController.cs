@@ -263,8 +263,7 @@ namespace FPTBookstore.Controllers
                         total = cart.Sum(x => x.Total);
                     }
                     Session[CartSession] = null;
-                    return Redirect(PaymentMoMo(result1.ToString(), 
-                        total.ToString().Substring(0, total.ToString().Length - 5)));
+                    
                     
 
                 }
@@ -278,63 +277,7 @@ namespace FPTBookstore.Controllers
 
         }
 
-        protected string PaymentMoMo(string OrderID, string total)
-        {
-            string endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
-            string partnerCode = "MOMOHDRK20200430";
-            string accessKey = "68tVdaHzCcvtfzwH";
-            string serectkey = "8AWejATXBF96XL3CqeICtqiiKwheEUAv";
-            string orderInfo = "OrderBook";
-            string returnUrl = "";
-            string notifyurl = "";
-
-            string amount = total;
-            string orderid = OrderID;
-            string requestId = OrderID;
-            string extraData = "";
-
-            string rawHash = "partnerCode=" +
-                             partnerCode + "&accessKey=" +
-                             accessKey + "&requestId=" +
-                             requestId + "&amount=" +
-                             amount + "&orderId=" +
-                             orderid + "&orderInfo=" +
-                             orderInfo + "&returnUrl=" +
-                             returnUrl + "&notifyUrl=" +
-                             notifyurl + "&extraData=" +
-                             extraData;
-
-            log.Debug("rawHash = " + rawHash);
-            MoMoSecurity crypto = new MoMoSecurity();
-            //sign signature SHA256
-            string signature = crypto.signSHA256(rawHash, serectkey);
-            log.Debug("Signature = " + signature);
-
-            //build body json request
-            JObject message = new JObject
-            {
-                { "partnerCode", partnerCode },
-                { "accessKey", accessKey },
-                { "requestId", requestId },
-                { "amount", amount },
-                { "orderId", orderid },
-                { "orderInfo", orderInfo },
-                { "returnUrl", returnUrl },
-                { "notifyUrl", notifyurl },
-                { "extraData", extraData },
-                { "requestType", "captureMoMoWallet" },
-                { "signature", signature }
-
-            };
-            log.Debug("Json request to MoMo: " + message.ToString());
-            string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
-
-            JObject jmessage = JObject.Parse(responseFromMomo);
-            log.Debug("Return from MoMo: " + jmessage.ToString());
-            
-            return jmessage.GetValue("payUrl").ToString();
-            
-        }
+        
         public ActionResult Success()
         {
             return View();

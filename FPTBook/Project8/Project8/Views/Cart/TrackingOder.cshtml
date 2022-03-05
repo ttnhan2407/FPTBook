@@ -144,24 +144,7 @@ body {font-family: Arial;}
     $(document).ready(function() {
         
     });
-    //regEvents: function Loadtable(id) {
-    //    $("#myTable").DataTable({
-    //        $.ajax({
-    //            url: "/Cart/loadOrder",
-            
-    //            type: "GET",
-    //            contentType: "application/json;charset=utf-8",
-    //            dataType: "json",
-    //            "columns": [
-    //                { "data": "OrderID" },
-    //                { "data": "DateStart" },
-    //                { "data": "DateEnd" }
-               
-    //            ]
-    //        })
-    //    });
-        
-    //};
+    
     $("#myTable").DataTable({
         "ajax": {  
             "url": "@Url.Action("loadOrder", "Cart")",  
