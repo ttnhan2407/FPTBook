@@ -295,19 +295,13 @@ namespace FPTBookstore.Controllers
 
         public JsonResult loadOrder()
         {
-            //if (id!=null)
-            //{
+            
             db.Configuration.ProxyCreationEnabled = false;
             var Order = db.Orders.ToList();
             
             return Json(new {data= Order }
                 , JsonRequestBehavior.AllowGet);
-            //}
-            //else
-            //{
-            //    List<Order> Order = db.Orders.Where(p => p.CustomerID == UserController.customerstatic.CustomerID).ToList();
-            //    return Json(Order, JsonRequestBehavior.AllowGet);
-            //}
+            
         }
     }
 }

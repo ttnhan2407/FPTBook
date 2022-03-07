@@ -69,8 +69,7 @@ namespace FPTBookstore.Controllers
                     {
                         //Session["User"] = result;
                         ModelState.Clear();
-                        //return Redirect("/Home/");
-                        //ModelState.AddModelError("", "Please Check Email Account Activation !");
+                        
                         return RedirectToAction("CheckActivationNotification", "User");
                     }
                     else
