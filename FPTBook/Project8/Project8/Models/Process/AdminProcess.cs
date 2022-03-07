@@ -454,11 +454,7 @@ namespace FPTBookstore.Models.Process
             return db.Customers.OrderBy(x => x.CustomerID).ToList();
         }
 
-        /// <summary>
-        /// user delete function
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>bool</returns>
+        
         public bool DeleteUser(int id)
         {
             try

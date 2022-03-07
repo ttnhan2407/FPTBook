@@ -17,21 +17,13 @@ namespace FPTBookstore.Models.Process
             db = new BSDBContext();
         }
 
-        /// <summary>
-        /// get the latest book by update date
-        /// </summary>
-        /// <param name="count">int</param>
-        /// <returns>List</returns>
+        
         public List<Book> NewDateBook(int count)
         {
             return db.Books.OrderByDescending(x => x.DateUpdate).Take(count).ToList();
         }
 
-        /// <summary>
-        /// filter books by subject
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>List</returns>
+        
         public List<Book> ThemeBook(int id)
         {
             return db.Books.Where(x => x.CategoryID == id).ToList();
