@@ -18,12 +18,10 @@ namespace FPTBookstore.Models.Process
             db = new BSDBContext();
         }
 
-        /// <summary>
-        /// Login function
-        /// </summary>
+        
         /// <param name="username">string</param>
         /// <param name="password">string</param>
-        /// <returns>int</returns>
+        
         public int Login(string username, string password)
         {
             var result = db.Admins.SingleOrDefault(x => x.Account == username);

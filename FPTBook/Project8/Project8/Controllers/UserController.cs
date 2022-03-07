@@ -67,7 +67,7 @@ namespace FPTBookstore.Controllers
                     BuildUserTemplate(idUser.CustomerID);
                     if (result > 0)
                     {
-                        //Session["User"] = result;
+                        
                         ModelState.Clear();
                         
                         return RedirectToAction("CheckActivationNotification", "User");
