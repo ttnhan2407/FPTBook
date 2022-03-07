@@ -19,8 +19,7 @@ namespace FPTBookstore.Models.Process
         }
 
         
-        /// <param name="username">string</param>
-        /// <param name="password">string</param>
+       
         
         public int Login(string username, string password)
         {
