@@ -42,7 +42,7 @@ namespace FPTBookstore.Models.Process
             }
         }
 
-        //Get ID : get code
+        
 
         #region get the code
 
@@ -128,7 +128,7 @@ namespace FPTBookstore.Models.Process
 
         #endregion
 
-        //Category : category
+        
 
         #region category
 
@@ -195,7 +195,7 @@ namespace FPTBookstore.Models.Process
 
         #endregion
 
-        //Author : author
+        
 
         #region author
 
@@ -267,7 +267,7 @@ namespace FPTBookstore.Models.Process
         #endregion
 
 
-        //Publish : publisher
+       
 
         #region publisher
 
@@ -337,7 +337,7 @@ namespace FPTBookstore.Models.Process
         #endregion
 
 
-        //Books : book
+        
 
         #region book
 
@@ -413,7 +413,7 @@ namespace FPTBookstore.Models.Process
 
         #endregion
 
-        // Contact (feedback) from customer
+        
 
         #region Customer Feedback
 
@@ -448,12 +448,7 @@ namespace FPTBookstore.Models.Process
 
         #endregion
 
-        //User management
-
-        /// <summary>
-        /// user list output function
-        /// </summary>
-        /// <returns>List</returns>
+        
         public List<Customer> ListUser()
         {
             return db.Customers.OrderBy(x => x.CustomerID).ToList();
