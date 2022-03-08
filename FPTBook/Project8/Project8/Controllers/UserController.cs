@@ -103,7 +103,7 @@ namespace FPTBookstore.Controllers
             string body =
                 System.IO.File.ReadAllText(HostingEnvironment.MapPath("~/EmailTemplate/") + "Text" + ".cshtml");
             var inforKH = db.Customers.Where(x => x.CustomerID == khCustomerID).First();
-            var url = "https://FPTBookstore.cf/" + "User/Confirm?khCustomerID=" + khCustomerID;
+            var url = "https://FPTBook.com/" + "User/Confirm?khCustomerID=" + khCustomerID;
             body = body.Replace("@ViewBag.ConfirmationLink", url);
             body = body.ToString();
             BuildEmailTemplate("Account Created Successfully", body, inforKH.Email);
@@ -239,13 +239,13 @@ namespace FPTBookstore.Controllers
                 else if (result == 0)
                 {
                     ModelState.AddModelError("", "Account does not exist.");
-                    //return RedirectToAction("LoginPage", "User");
+                    
                 }
                 //if you enter the wrong account or password
                 else if (result == -1)
                 {
                     ModelState.AddModelError("", "Incorrect account or password");
-                    //return RedirectToAction("LoginPage", "User");
+                    
                 }
             }
 
