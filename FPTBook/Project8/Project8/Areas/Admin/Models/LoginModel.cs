@@ -9,7 +9,7 @@ namespace FPTBookstore.Areas.Admin.Models
 {
     public class LoginModel
     {
-        //Call a LoginModel to equal with Admin in Models
+        
 
         [Required(ErrorMessage = "You have not signed up yet")]
         [Display(Name = "Account")]
