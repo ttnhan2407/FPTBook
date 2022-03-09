@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Trang quản lý sản phẩm">
+    <meta name="description" content="Product management page">
     <meta name="author" content="MHN">
     <title>Admin Homepage</title>
     @*DataTables*@
@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/Admin/Home">Trang Quản Lý</a>
+                <a class="navbar-brand" href="/Admin/Home">Management Page</a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
@@ -53,35 +53,35 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class="fa fa-bars"></i> Sản phẩm<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bars"></i> Product<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/Admin/Home/ShowListBook">Sách</a>
+                                    <a href="/Admin/Home/ShowListBook">Book</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/Home/ShowListCategory">Thể loại</a>
+                                    <a href="/Admin/Home/ShowListCategory">Category</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/Home/ShowListAuthor">Tác giả</a>
+                                    <a href="/Admin/Home/ShowListAuthor">Author</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/Home/ShowListPublish">Nhà xuất bản</a>
+                                    <a href="/Admin/Home/ShowListPublish">Publisher</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cogs"></i> Hệ thống<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-cogs"></i> System<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/Admin/Home/ShowUser">Tài khoản</a>
+                                    <a href="/Admin/Home/ShowUser">Account</a>
                                 </li>
                                 <li>
-                                    <a href="/Admin/Home/Order">Đơn hàng</a>
+                                    <a href="/Admin/Home/Order">Order</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/Admin/Home/FeedBack"><i class="fa fa-file"></i> Phản hồi</a>
+                            <a href="/Admin/Home/FeedBack"><i class="fa fa-file"></i> Feedback</a>
                         </li>
                     </ul>
                 </div>
@@ -114,7 +114,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#myTable').DataTable();
-            $('#thongBaoThanhCong').delay(3000).slideUp();
+            $('#AnnouncementofSuccess').delay(3000).slideUp();
         });
     </script>
 </body>

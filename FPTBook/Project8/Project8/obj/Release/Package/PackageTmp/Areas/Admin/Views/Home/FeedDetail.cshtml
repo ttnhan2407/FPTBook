@@ -1,29 +1,29 @@
-﻿@model WebBanSach.Models.Data.LienHe
+﻿@model FPTBookstore.Models.Data.Feedback
 
 @{
     ViewBag.Title = "FeedDetail";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi tiết phản hồi</h2>
+<h2>Feedback Details</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Ho)
+            @Html.DisplayNameFor(model => model.LastName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ho)
+            @Html.DisplayFor(model => model.LastName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ten)
+            @Html.DisplayNameFor(model => model.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ten)
+            @Html.DisplayFor(model => model.FirstName)
         </dd>
 
         <dt>
@@ -35,31 +35,31 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DienThoai)
+            @Html.DisplayNameFor(model => model.Phone)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DienThoai)
+            @Html.DisplayFor(model => model.Phone)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NoiDung)
+            @Html.DisplayNameFor(model => model.Contents)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NoiDung)
+            @Html.DisplayFor(model => model.Contents)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayCapNhat)
+            @Html.DisplayNameFor(model => model.DateUpdate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NgayCapNhat)
+            @Html.DisplayFor(model => model.DateUpdate)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Trở về", "FeedBack")
+    @Html.ActionLink("Return", "FeedBack")
 </p>

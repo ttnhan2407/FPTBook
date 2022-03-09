@@ -1,35 +1,35 @@
-﻿@model IEnumerable<WebBanSach.Models.Data.Sach>
+﻿@model IEnumerable<FPTBookstore.Models.Data.Book>
 
 @{
     ViewBag.Title = "ShowListBook";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản lý sách</h2>
+<h2>Book Management</h2>
 
 <p>
-    @Html.ActionLink("Thêm sách", "AddBook")
+    @Html.ActionLink("Adding book", "AddBook")
 </p>
 <table class="table" id="myTable">
     <thead>
         <tr>
             <th>
-                Mã
+                Book ID
             </th>
             <th width="320">
-                Tên Sách
+                Book Name
             </th>
             <th>
-                Ảnh Bìa
+                Image
             </th>
             <th>
-                Giá Bán
+                Price
             </th>
             <th>
-                Ngày Cập Nhật
+                Date Update
             </th>
             <th>
-                Số Lượng
+                Inventory
             </th>
             <th></th>
         </tr>
@@ -37,31 +37,31 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr id="row_@item.MaSach">
+            <tr id="row_@item.BookID">
                 <td>
-                    @Html.DisplayFor(modelItem => item.MaSach)
+                    @Html.DisplayFor(modelItem => item.BookID)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TenSach)
+                    @Html.DisplayFor(modelItem => item.BookName)
                 </td>
                 <td>
-                    <img src="/images/@item.AnhBia" width="105" height="140" />
+                    <img src="/images/@item.Image" width="105" height="140" />
                 </td>
                 <td>
-                    <span>@(item.GiaBan.HasValue ? item.GiaBan.Value.ToString("N0") : "Liên hệ") VND</span>
+                    <span>@(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Contact") USD</span>
                 </td>
                 <td>
-                    @String.Format("{0:dd/MM/yyyy}", item.NgayCapNhat)
+                    @String.Format("{0:dd/MM/yyyy}", item.DateUpdate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.SoLuongTon)
+                    @Html.DisplayFor(modelItem => item.Inventory)
                 </td>
                 <td>
-                    @Html.ActionLink("Xem", "DetailsBook", new { id = item.MaSach }) |
-                    @Ajax.ActionLink("Xóa", "DeleteBook", new { id = item.MaSach }, new AjaxOptions
+                    @Html.ActionLink("View", "DetailsBook", new { id = item.BookID }) |
+                    @Ajax.ActionLink("Delete", "DeleteBook", new { id = item.BookID }, new AjaxOptions
                {
-                   Confirm = "Bạn có muốn xóa cuốn sách này không?",
-                   OnComplete = "$('#row_" + @item.MaSach + "').remove()",
+                   Confirm = "Do you want to delete this book?",
+                   OnComplete = "$('#row_" + @item.BookID + "').remove()",
                    HttpMethod = "Delete"
                })
                 </td>

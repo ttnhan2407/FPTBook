@@ -1,4 +1,4 @@
-﻿@model WebBanSach.Models.Data.Admin
+﻿@model FPTBookstore.Models.Data.Admin
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Vui lòng đăng nhập</h3>
+                        <h3 class="panel-title">Please, Log in</h3>
                     </div>
                     <div class="panel-body">
                         @using (Html.BeginForm("Index", "Login", FormMethod.Post))
@@ -37,13 +37,13 @@
                             @Html.ValidationSummary(false, "", new { @class = "text-danger" });
                             <fieldset>
                                 <div class="form-group">
-                                    @Html.TextBoxFor(model => model.TaiKhoan, new { @class = "form-control", @autofocus = "autofocus" })
+                                    @Html.TextBoxFor(model => model.Account, new { @class = "form-control", @autofocus = "autofocus" })
                                 </div>
                                 <div class="form-group">
-                                    @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control" })
+                                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" class="btn btn-lg btn-success btn-block">Đăng nhập</button>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Log in</button>
                             </fieldset>
                         }
                     </div>

@@ -1,21 +1,21 @@
-﻿@model WebBanSach.Models.Data.KhachHang
+﻿@model FPTBookstore.Models.Data.Customer
 
 @{
     ViewBag.Title = "DetailsUser";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi tiết người dùng</h2>
+<h2>User Details</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenKH)
+            @Html.DisplayNameFor(model => model.CustomerName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenKH)
+            @Html.DisplayFor(model => model.CustomerName)
         </dd>
 
         <dt>
@@ -27,64 +27,64 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
+            @Html.DisplayNameFor(model => model.Address)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiaChi)
+            @Html.DisplayFor(model => model.Address)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DienThoai)
+            @Html.DisplayNameFor(model => model.Phone)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DienThoai)
+            @Html.DisplayFor(model => model.Phone)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgaySinh)
+            @Html.DisplayNameFor(model => model.DateOfBirth)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NgaySinh)
+            @Html.DisplayFor(model => model.DateOfBirth)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TaiKhoan)
+            @Html.DisplayNameFor(model => model.Account)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TaiKhoan)
+            @Html.DisplayFor(model => model.Account)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MatKhau)
+            @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
-            @Html.HiddenFor(model => model.MatKhau)
+            @Html.HiddenFor(model => model.Password)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayTao)
+            @Html.DisplayNameFor(model => model.DateCreate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NgayTao)
+            @Html.DisplayFor(model => model.DateCreate)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TrangThai)
+            @Html.DisplayNameFor(model => model.Status)
         </dt>
 
         <dd>
-            <a href="#">@(Model.TrangThai ? "Kích hoạt" : "Khóa")</a>
+            <a href="#">@(Model.Status ? "Activate" : "Lock up")</a>
         </dd>
 
     </dl>
 </div>
-<p>  
-    @Html.ActionLink("Trở về", "ShowUser")
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.MaKH })*@
+<p>
+    @Html.ActionLink("Return", "ShowUser")
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID })*@
 </p>

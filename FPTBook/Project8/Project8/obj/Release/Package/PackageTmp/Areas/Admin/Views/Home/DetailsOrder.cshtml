@@ -1,41 +1,41 @@
-﻿@model IEnumerable<WebBanSach.Models.Data.ChiTietDDH>
+﻿@model IEnumerable<FPTBookstore.Models.Data.OrderDetail>
 
 @{
     ViewBag.Title = "DetailsOrder";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi tiết đơn hàng</h2>
+<h2>Order Detail</h2>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DonDatHang.MaDDH)
+            @Html.DisplayNameFor(model => model.Order.OrderID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sach.TenSach)
+            @Html.DisplayNameFor(model => model.Book.BookName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SoLuong)
+            @Html.DisplayNameFor(model => model.Quantity)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DonGia)
+            @Html.DisplayNameFor(model => model.Price)
         </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.DonDatHang.MaDDH)
+            @Html.DisplayFor(modelItem => item.Order.OrderID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Sach.TenSach)
+            @Html.DisplayFor(modelItem => item.Book.BookName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SoLuong)
+            @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
-            <p>@String.Format("{0:0,0}", item.DonGia) VND</p>
+            <p>@String.Format("{0:0,0}", item.Price) USD</p>
         </td>
     </tr>
 }
@@ -43,5 +43,5 @@
 </table>
 
 <div>
-    @Html.ActionLink("Trở về", "Order")
+    @Html.ActionLink("Return", "Order")
 </div>

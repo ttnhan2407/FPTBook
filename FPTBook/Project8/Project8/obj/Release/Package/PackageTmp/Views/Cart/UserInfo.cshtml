@@ -1,4 +1,4 @@
-﻿@model WebBanSach.Models.Data.KhachHang
+﻿@model FPTBookstore.Models.Data.Customer
 <style>
     .checkout-button {
         display: flex;
@@ -32,24 +32,24 @@
         @using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
             {
             <div class="form-group">
-                <h4>Thông tin khách hàng</h4>
-                <input name="MaKH" class="form-control" value="@Model.MaKH" type="hidden" />
+                <h4>Customer information</h4>
+                <input name="CustomerID" class="form-control" value="@Model.CustomerID" type="hidden" />
             </div>
             <div class="form-group">
-                <label>Họ tên khách hàng</label>
-                <input name="TenKH" class="form-control" value="@Model.TenKH" readonly="readonly" />              
+                <label>Customer's full name</label>
+                <input name="CustomerName" class="form-control" value="@Model.CustomerName" readonly="readonly" />              
             </div>
                 <div class="form-group">
                     <label>Email</label>
                     <input name="Email" type="email" class="form-control" value="@Model.Email" readonly="readonly" />  
                 </div>
                 <div class="form-group">
-                    <label>Địa chỉ</label>
-                    <input name="DiaChi" class="form-control" value="@Model.DiaChi" readonly="readonly" />
+                    <label>Address</label>
+                    <input name="Address" class="form-control" value="@Model.Address" readonly="readonly" />
                 </div>
                 <div class="form-group">
-                    <label>Điện thoại</label>
-                    <input name="DienThoai" class="form-control" value="@Model.DienThoai" readonly="readonly" />
+                    <label>Phone</label>
+                    <input name="Phone" class="form-control" value="@Model.Phone" readonly="readonly" />
                 </div>
                 <div class="checkout-button">
                     <div class="checkout-selector">
@@ -57,23 +57,16 @@
                     </div>
                     <div class="content" style="display: flex;align-items: center;">
                         <span class="checkout-title">
-                            Thanh Toán Khi Nhận Hàng
+                            Payment On Delivery
                         </span>
                     </div>
                 </div>
                 <br/>
-                <div class="checkout-button">
-                    <div class="checkout-selector">
-                        <input type="radio" name="PaymentMethod" value="2" class="btn btn-m2 btn-checkout">
-                    </div>
-                    <div class="content" style="display: flex;align-items: center;">
-                        <span class="checkout-title">
-                            Thanh toán bằng MoMo
-                        </span>
-                    </div>
-                </div>
+                
                 <br/>
-                <button type="submit" class="btn btn-success">Gửi đơn hàng</button>
+                <button type="submit" class="btn btn-success">Submit An Order</button>
+
+
         }
     </div>
 

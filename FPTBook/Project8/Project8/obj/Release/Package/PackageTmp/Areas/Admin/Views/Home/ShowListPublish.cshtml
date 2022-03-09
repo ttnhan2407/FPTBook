@@ -1,29 +1,29 @@
-﻿@model IEnumerable<WebBanSach.Models.Data.NhaXuatBan>
+﻿@model IEnumerable<FPTBookstore.Models.Data.Publisher>
 
 @{
     ViewBag.Title = "ShowListPublish";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản lý nhà xuất bản</h2>
+<h2>Publisher Management</h2>
 
 <p>
-    @Html.ActionLink("Thêm nhà xuất bản", "AddPublish")
+    @Html.ActionLink("Adding publisher", "AddPublish")
 </p>
 <table class="table" id="myTable">
     <thead>
         <tr>
             <th>
-                Mã
+                Publisher ID
             </th>
             <th>
-                Nhà Xuất Bản
+                Publisher Name
             </th>
             <th>
-                Địa Chỉ
+                Address
             </th>
             <th>
-                Điện Thoại
+                Phone
             </th>
             <th></th>
         </tr>
@@ -32,25 +32,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr id="row_@item.MaNXB">
+            <tr id="row_@item.PublisherID">
                 <td>
-                    @Html.DisplayFor(modelItem => item.MaNXB)
+                    @Html.DisplayFor(modelItem => item.PublisherID)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TenNXB)
+                    @Html.DisplayFor(modelItem => item.PublisherName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DiaChi)
+                    @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DienThoai)
+                    @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    @Html.ActionLink("Xem", "UpdatePublish", new { id = item.MaNXB }) |
-                    @Ajax.ActionLink("Xóa", "DeletePublish", new { id = item.MaNXB }, new AjaxOptions
+                    @Html.ActionLink("Edit", "UpdatePublish", new { id = item.PublisherID }) |
+                    @Ajax.ActionLink("Delete", "DeletePublish", new { id = item.PublisherID }, new AjaxOptions
                {
-                   Confirm = "Bạn có muốn xóa nhà xuất bản này không?",
-                   OnComplete = "$('#row_" + @item.MaNXB + "').remove()",
+                   Confirm = "Do you want to delete this publisher?",
+                   OnComplete = "$('#row_" + @item.PublisherID + "').remove()",
                    HttpMethod = "Delete"
                })
                 </td>

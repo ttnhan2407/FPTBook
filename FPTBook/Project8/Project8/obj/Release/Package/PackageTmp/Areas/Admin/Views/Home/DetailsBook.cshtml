@@ -1,97 +1,97 @@
-﻿@model WebBanSach.Models.Data.Sach
+﻿@model FPTBookstore.Models.Data.Book
 
 @{
     ViewBag.Title = "DetailsBook";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>@Model.TenSach</h2>
+<h2>@Model.BookName</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenSach)
+            @Html.DisplayNameFor(model => model.BookName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenSach)
+            @Html.DisplayFor(model => model.BookName)
         </dd>
         <dt>
-            NXB
+            Publisher
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)
-        </dd>
-
-        <dt>
-            Tác giả
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TacGia.TenTG)
+            @Html.DisplayFor(model => model.Publisher.PublisherName)
         </dd>
 
         <dt>
-            Thể loại
+            Author
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TheLoai.TenLoai)
+            @Html.DisplayFor(model => model.Author.AuthorName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.GiaBan)
+            Category
         </dt>
 
         <dd>
-            <p><span>@(Model.GiaBan.HasValue ? Model.GiaBan.Value.ToString("N0") : "Liên hệ")</span> VND</p>
+            @Html.DisplayFor(model => model.Category.CategoryName)
         </dd>
 
         <dt>
-            Sơ lược
+            @Html.DisplayNameFor(model => model.Price)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Mota)
+            <p><span>@(Model.Price.HasValue ? Model.Price.Value.ToString("N0") : "Contact")</span> USD</p>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NguoiDich)
+            Description
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NguoiDich)
+            @Html.DisplayFor(model => model.Description)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AnhBia)
+            @Html.DisplayNameFor(model => model.Translator)
         </dt>
 
         <dd>
-            <img src="/images/@Model.AnhBia" width="180" height="250" />
+            @Html.DisplayFor(model => model.Translator)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayCapNhat)
+            @Html.DisplayNameFor(model => model.Image)
         </dt>
 
         <dd>
-            @String.Format("{0:dd/MM/yyyy}", Model.NgayCapNhat)
+            <img src="/images/@Model.Image" width="180" height="250" />
         </dd>
 
         <dt>
-            Số lượng
+            @Html.DisplayNameFor(model => model.DateUpdate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SoLuongTon)
+            @String.Format("{0:dd/MM/yyyy}", Model.DateUpdate)
+        </dd>
+
+        <dt>
+            Inventory
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Inventory)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Trở về", "ShowListBook") |
-    @Html.ActionLink("Sửa", "UpdateBook", new { id = Model.MaSach })
+    @Html.ActionLink("Return", "ShowListBook") |
+    @Html.ActionLink("Edit", "UpdateBook", new { id = Model.BookID })
 </p>
