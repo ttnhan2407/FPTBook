@@ -80,31 +80,7 @@ namespace FPTBookstore.Controllers
             });
         }
 
-        //Update cart
-        public JsonResult Update(string cartModel)
-        {
-            //create a json object
-            var jsonCart = new JavaScriptSerializer().Deserialize<List<CartModel>>(cartModel);
-
-            //cast type from session
-            var sessionCart = (List<CartModel>)Session[CartSession];
-
-            foreach (var item in sessionCart)
-            {
-                var jsonItem = jsonCart.Single(x => x.book.BookID == item.book.BookID);
-                if (jsonItem != null)
-                {
-                    item.Quantity = jsonItem.Quantity;
-                }
-            }
-            //update session
-            Session[CartSession] = sessionCart;
-
-            return Json(new
-            {
-                status = true
-            });
-        }
+       
 
         //GET : /Cart/AddItem/?id=?&quantity=1 : add product to cart
         public ActionResult AddItem(int id, int quantity)
