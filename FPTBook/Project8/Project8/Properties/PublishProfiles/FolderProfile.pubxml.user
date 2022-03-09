@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\FPTBook</_PublishTargetUrl>
-    <History>True|2022-03-09T11:43:15.9489203Z;True|2022-03-09T17:04:12.9874910+07:00;False|2022-03-09T17:03:22.1999302+07:00;True|2022-03-09T11:01:02.6788756+07:00;True|2022-03-09T10:58:51.1270598+07:00;True|2022-03-09T10:54:13.0680170+07:00;True|2022-03-09T10:31:43.4593097+07:00;</History>
+    <History>True|2022-03-09T13:42:35.3137536Z;True|2022-03-09T18:43:15.9489203+07:00;True|2022-03-09T17:04:12.9874910+07:00;False|2022-03-09T17:03:22.1999302+07:00;True|2022-03-09T11:01:02.6788756+07:00;True|2022-03-09T10:58:51.1270598+07:00;True|2022-03-09T10:54:13.0680170+07:00;True|2022-03-09T10:31:43.4593097+07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -141,10 +141,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/04/2020 16:04:48</publishTime>
     </File>
     <File Include="bin/Project8.dll">
-      <publishTime>03/09/2022 18:43:14</publishTime>
+      <publishTime>03/09/2022 20:42:32</publishTime>
     </File>
     <File Include="bin/Project8.pdb">
-      <publishTime>03/09/2022 18:43:14</publishTime>
+      <publishTime>03/09/2022 20:42:32</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>11/04/2020 16:04:48</publishTime>
@@ -2931,7 +2931,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/28/2022 12:49:25</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>02/28/2022 13:08:58</publishTime>
+      <publishTime>03/09/2022 20:42:10</publishTime>
     </File>
     <File Include="Views/Home/Exchange.cshtml">
       <publishTime>03/08/2022 22:31:18</publishTime>
