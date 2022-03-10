@@ -14,31 +14,19 @@ namespace FPTBookstore.Models.Process
             db = new BSDBContext();
         }
 
-        /// <summary>
-        /// function to get order item code
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        
         public OrderDetail GetIdOrderDetail(int id)
         {
             return db.OrderDetails.Find(id);
         }
 
-        /// <summary>
-        /// View order details
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>List</returns>
+        
         public List<OrderDetail> ListDetail(int id)
         {
             return db.OrderDetails.Where(x => x.OrderID == id).OrderBy(x => x.OrderID).ToList();
         }
 
-        /// <summary>
-        /// function to add products to the order
-        /// </summary>
-        /// <param name="detail">OrderDetails</param>
-        /// <returns>bool</returns>
+        
         public bool Insert(OrderDetail detail)
         {
             try

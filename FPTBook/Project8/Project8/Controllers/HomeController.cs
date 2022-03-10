@@ -45,7 +45,7 @@ namespace FPTBookstore.Controllers
         //GET : Show About page
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your Application Description Page.";
             return View();
         }
 
@@ -76,7 +76,7 @@ namespace FPTBookstore.Controllers
         [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "We are very pleased to hear from you!";
+            ViewBag.Message = "We Are Very Pleased To Hear From You!";
 
             return View();
         }
@@ -102,13 +102,13 @@ namespace FPTBookstore.Controllers
 
                 if (result > 0)
                 {
-                    ViewBag.success = "Your feedback has been received";
+                    ViewBag.success = "Your Feedback Has Been Received";
                     ModelState.Clear();
                     return View();
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Recording error");
+                    ModelState.AddModelError("", "Recording Error");
                 }
             }
 

@@ -113,7 +113,7 @@ namespace FPTBookstore.Controllers
         public void BuildEmailTemplate(string subjectText, string bodyText, string sendTo)
         {
             string from, to, bcc, cc, subject, body;
-            from = "FPTBookstore@gmail.com";
+            from = "FPTBook@gmail.com";
             to = sendTo.Trim();
             bcc = "";
             cc = "";
@@ -149,7 +149,7 @@ namespace FPTBookstore.Controllers
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.Credentials = new System.Net.NetworkCredential("webbansach17dtha3@gmail.com", "webbansach123");
+            client.Credentials = new System.Net.NetworkCredential("fptbook@gmail.com", "fptbook");
 
         }
 
@@ -191,13 +191,13 @@ namespace FPTBookstore.Controllers
                 //if the account doesn't exist
                 else if (result == 0)
                 {
-                    ModelState.AddModelError("", "Account does not exist.");
+                    ModelState.AddModelError("", "Account Does Not Exist.");
                     //return RedirectToAction("LoginPage", "User");
                 }
                 //if you enter the wrong account or password
                 else if (result == -1)
                 {
-                    ModelState.AddModelError("", "Incorrect account or password");
+                    ModelState.AddModelError("", "Incorrect Account Or Password");
                     //return RedirectToAction("LoginPage", "User");
                 }
             }
@@ -238,13 +238,13 @@ namespace FPTBookstore.Controllers
                 //if the account doesn't exist
                 else if (result == 0)
                 {
-                    ModelState.AddModelError("", "Account does not exist.");
+                    ModelState.AddModelError("", "Account Does Not Exist.");
                     
                 }
                 //if you enter the wrong account or password
                 else if (result == -1)
                 {
-                    ModelState.AddModelError("", "Incorrect account or password");
+                    ModelState.AddModelError("", "Incorrect Account Or Password");
                     
                 }
             }
@@ -296,7 +296,7 @@ namespace FPTBookstore.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Update failed.");
+                    ModelState.AddModelError("", "Update Failed.");
                 }
             }
 

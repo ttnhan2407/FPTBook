@@ -13,29 +13,19 @@ namespace FPTBookstore.Models.Process
 
         BSDBContext db = null;
 
-        /// <summary>
-        /// Contructor
-        /// </summary>
+        
         public UserProcess()
         {
             db = new BSDBContext();
         }
 
-        /// <summary>
-        /// function to get customer code
-        /// </summary>
-        /// <param name="id">int</param>
-        /// <returns>Customer</returns>
+        
         public Customer GetIdUser(int id)
         {
             return db.Customers.Find(id);
         }
 
-        /// <summary>
-        /// Function to add new customer
-        /// </summary>
-        /// <param name="entity">Customer</param>
-        /// <returns>int</returns>
+        
         public int InsertUser(Customer entity)
         {
             db.Customers.Add(entity);
@@ -43,12 +33,7 @@ namespace FPTBookstore.Models.Process
             return entity.CustomerID;
         }
 
-        /// <summary>
-        /// customer login function
-        /// </summary>
-        /// <param name="username">string</param>
-        /// <param name="password">string</param>
-        /// <returns>int</returns>
+        
         public int Login(string username, string password)
         {
             var result = db.Customers.SingleOrDefault(x => x.Account == username);
@@ -69,12 +54,7 @@ namespace FPTBookstore.Models.Process
             }
         }
 
-        /// <summary>
-        /// function to check for existing account in db
-        /// </summary>
-        /// <param name="username">string</param>
-        /// <param name="password">string</param>
-        /// <returns>int</returns>
+        
         public int CheckUsername(string username,string password)
         {
             var result = db.Customers.SingleOrDefault(x => x.Account == username);
@@ -92,11 +72,7 @@ namespace FPTBookstore.Models.Process
             }
         }
 
-        /// <summary>
-        /// function to save customer updates
-        /// </summary>
-        /// <param name="entity">Customer</param>
-        /// <returns>int</returns>
+        
         public int UpdateUser(Customer entity)
         {
             try
