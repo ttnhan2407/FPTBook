@@ -79,12 +79,12 @@
         </dt>
 
         <dd>
-            <a href="#">@(Model.Status ? "Activate" : "Lock up")</a>
+            <a href="#">@(Model.Status ? "Activate": "Activate" )</a>
         </dd>
 
     </dl>
 </div>
 <p>
     @Html.ActionLink("Return", "ShowUser")
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID })*@
+    
 </p>

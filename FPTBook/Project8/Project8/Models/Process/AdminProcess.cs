@@ -19,8 +19,6 @@ namespace FPTBookstore.Models.Process
         }
 
         
-       
-        
         public int Login(string username, string password)
         {
             var result = db.Admins.SingleOrDefault(x => x.Account == username);

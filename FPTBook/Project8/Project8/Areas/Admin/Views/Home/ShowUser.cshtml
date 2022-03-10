@@ -40,7 +40,7 @@
                     @Html.DisplayFor(modelItem => item.DateCreate)
                 </td>
                 <td>
-                    <a href="#" class="btn-active" data-id="@item.CustomerID">@Html.Raw(item.Status ? "<strong>Activate</strong>" : "Lock up")</a>
+                    <a href="#" class="btn-active" data-id="@item.CustomerID">@Html.Raw(item.Status ? "<strong>Activate</strong>" : "<strong>Activate</strong>")</a>
                 </td>
                 <td>
                     @Html.ActionLink("View", "DetailsUser", new { id = item.CustomerID }) |
