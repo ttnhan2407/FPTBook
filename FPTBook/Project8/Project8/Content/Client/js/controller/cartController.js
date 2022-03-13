@@ -9,8 +9,8 @@
             $.each(listProduct, function (i, item) {
                 cartList.push({
                     Quantity: $(item).val(),
-                    sach: {
-                        MaSach: $(item).data('id')
+                    book: {
+                        BookID: $(item).data('id')
                     }
                 });
             });

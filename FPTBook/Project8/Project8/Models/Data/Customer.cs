@@ -19,10 +19,12 @@
         [Display(Name = "CustomerID")]
         public int CustomerID { get; set; }
 
+
         [StringLength(50)]
         [Required(ErrorMessage = "Names cannot be left blank")]
         [Display(Name = "CustomerName")]
         public string CustomerName { get; set; }
+
 
         [Required(ErrorMessage = "Email can't be empty")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Email is not valid")]
@@ -33,8 +35,6 @@
         [StringLength(250)]
         [Display(Name = "Address")]
         [Required(ErrorMessage = "Address cannot be left blank")]
-
-
         public string Address { get; set; }
 
         [DataType(DataType.PhoneNumber)]
@@ -59,10 +59,12 @@
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
+
         [Display(Name = "DateCreate")]
         [DataType(DataType.DateTime)]
         public DateTime? DateCreate { get; set; }

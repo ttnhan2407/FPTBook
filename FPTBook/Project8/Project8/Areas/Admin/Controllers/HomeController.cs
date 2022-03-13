@@ -81,7 +81,14 @@ namespace FPTBookstore.Areas.Admin.Controllers
                     {
                         fileUpload.SaveAs(path);
                     }
-
+                    if (!string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase) &&
+                        !string.Equals(fileName, "png", StringComparison.OrdinalIgnoreCase) &&
+                        !string.Equals(fileName, "jpeg", StringComparison.OrdinalIgnoreCase) &&
+                        !string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase))
+                    {
+                        ViewBag.Alert = "Error file, please choose again";
+                        return View();
+                    }
                     //execute the image link to the cover image link
                     book.Image = fileName;
                     //do save to db
@@ -94,14 +101,14 @@ namespace FPTBookstore.Areas.Admin.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "add failed.");
+                        ModelState.AddModelError("", "Add failed.");
                     }
                 }
             }
 
             return View();
         }
-
+        
         //GET : Admin/Home/DetailsBook/:id : Detail page for a book
         [HttpGet]
         public ActionResult DetailsBook(int id)
@@ -140,6 +147,7 @@ namespace FPTBookstore.Areas.Admin.Controllers
             {
                 //check data validity
                 if (ModelState.IsValid)
+
                 {
                     //call the UpdateBook function for updating the book
                     var result = new AdminProcess().UpdateBook(book);
@@ -154,14 +162,14 @@ namespace FPTBookstore.Areas.Admin.Controllers
                     }
                 }
             }
-            //if you change the cover photo, do it
+            //if you change the cover photo
             else
             {
                 if (ModelState.IsValid)
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
                     var path = Path.Combine(Server.MapPath("/images"), fileName);
-
+                    
                     if (System.IO.File.Exists(path))
                     {
                         ViewBag.Alert = "Image already exists";
@@ -170,16 +178,24 @@ namespace FPTBookstore.Areas.Admin.Controllers
                     {
                         fileUpload.SaveAs(path);
                     }
-
+                    
                     book.Image = fileName;
                     var result = new AdminProcess().UpdateBook(book);
+                    if (!string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase) &&
+                        !string.Equals(fileName, "png", StringComparison.OrdinalIgnoreCase) &&
+                        !string.Equals(fileName, "jpeg", StringComparison.OrdinalIgnoreCase) &&
+                        !string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase))
+                    {
+                        ViewBag.Alert = "Error file, please choose again";
+                        return View(book);
+                    }
                     if (result == 1)
                     {
-                        ViewBag.Success = "Update successful";
+                        ViewBag.Success = "Update Successful";
                     }
                     else
                     {
-                        ModelState.AddModelError("", "update failed.");
+                        ModelState.AddModelError("", "Update Failed.");
                     }
                 }
             }

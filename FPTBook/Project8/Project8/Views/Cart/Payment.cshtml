@@ -9,7 +9,7 @@
     <script src="/Content/Client/js/controller/cartController.js"></script>
 }
 
-<h2 style="margin-bottom: 20px;">Order Information</h2>
+<h2 style="margin-bottom: 20px;">Order information</h2>
 @if (Model.Count > 0)
 {
     <table id="cart" class="table table-condensed">
@@ -34,25 +34,25 @@
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">@item.book.Price.GetValueOrDefault(0).ToString("N0") USD</td>
+                    <td data-th="Price">@item.book.Price.GetValueOrDefault(0).ToString("N0")  $</td>
                     <td data-th="Quantity">
                         <input type="number" style="border: none;" class="txtQuantity" readonly="readonly" data-id="@item.book.BookID" value="@item.Quantity">
                     </td>
-                    <td data-th="Subtotal" class="text-center">@((item.book.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0")) USD</td>
+                    <td data-th="Subtotal" class="text-center">@((item.book.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))  $</td>
                 </tr>
             }
         </tbody>
         <tfoot>
             <tr class="visible-xs">
-                <td class="text-center"><strong>Total: @String.Format("{0:0,0}", ViewBag.Total) USD</strong></td>
+                <td class="text-center"><strong>Total: @String.Format("{0:0,0}", ViewBag.Total)  $</strong></td>
             </tr>
             <tr>
                 <td>
-                    <a href="/Cart" class="btn btn-warning"><i class="fa fa-angle-left"></i> Return</a>
+                    <a href="/Cart" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back</a>
                 </td>
                 <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center"><strong>Total: @String.Format("{0:0,0}", ViewBag.Total) USD</strong></td>
-                
+                <td class="hidden-xs text-center"><strong>Total: @String.Format("{0:0,0}", ViewBag.Total)  $</strong></td>
+                <td>@*<a href="#" class="btn btn-success btn-block">Order <i class="fa fa-angle-right"></i></a>*@</td>
             </tr>
         </tfoot>
     </table>
@@ -65,7 +65,7 @@ else
 {
     <span class="alert alert-danger">There are no products in the cart</span>
     <br />
-    <a href="/Home/" style="margin-top: 20px;" class="btn btn-warning"> Continue Shopping</a>
+    <a href="/Home/" style="margin-top: 20px;" class="btn btn-warning"> Continue shopping</a>
 }
 
 
