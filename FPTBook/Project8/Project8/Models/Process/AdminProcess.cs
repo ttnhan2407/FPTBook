@@ -379,7 +379,7 @@ namespace FPTBookstore.Models.Process
                 book.Translator = entity.Translator;
                 book.Image = entity.Image;
                 book.DateUpdate = entity.DateUpdate;
-                book.Inventory = entity.Inventory;
+                book.Quantity = entity.Quantity;
                 db.SaveChanges();
                 return 1;
             }

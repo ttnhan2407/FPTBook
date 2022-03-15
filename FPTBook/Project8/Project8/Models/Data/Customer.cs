@@ -22,7 +22,7 @@
 
         [StringLength(50)]
         [Required(ErrorMessage = "Names cannot be left blank")]
-        [Display(Name = "CustomerName")]
+        [Display(Name = "Customer Name")]
         public string CustomerName { get; set; }
 
 
@@ -44,7 +44,7 @@
         public string Phone { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        [Display(Name = "DateOfBirth")]
+        [Display(Name = "Date Of Birth")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DateOfBirth { get; set; }
@@ -65,7 +65,7 @@
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "DateCreate")]
+        [Display(Name = "Date Create")]
         [DataType(DataType.DateTime)]
         public DateTime? DateCreate { get; set; }
 

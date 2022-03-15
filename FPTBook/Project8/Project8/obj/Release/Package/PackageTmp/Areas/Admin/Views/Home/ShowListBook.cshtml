@@ -29,7 +29,7 @@
                 Date Update
             </th>
             <th>
-                Inventory
+                Quantity
             </th>
             <th></th>
         </tr>
@@ -54,7 +54,7 @@
                     @String.Format("{0:dd/MM/yyyy}", item.DateUpdate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Inventory)
+                    @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td>
                     @Html.ActionLink("View", "DetailsBook", new { id = item.BookID }) |
