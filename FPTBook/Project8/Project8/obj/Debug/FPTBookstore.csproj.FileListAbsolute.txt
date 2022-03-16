@@ -257,3 +257,4 @@ C:\Users\heine\Documents\GitHub\FPTBook\FPTBook\Project8\Project8\obj\Debug\FPTB
 C:\Users\heine\Documents\GitHub\FPTBook\FPTBook\Project8\Project8\obj\Debug\FPTBookstore.csproj.CopyComplete
 C:\Users\heine\Documents\GitHub\FPTBook\FPTBook\Project8\Project8\obj\Debug\Project8.dll
 C:\Users\heine\Documents\GitHub\FPTBook\FPTBook\Project8\Project8\obj\Debug\Project8.pdb
+C:\Users\heine\Documents\GitHub\FPTBook\FPTBook\Project8\Project8\obj\Debug\FPTBookstore.csproj.AssemblyReference.cache

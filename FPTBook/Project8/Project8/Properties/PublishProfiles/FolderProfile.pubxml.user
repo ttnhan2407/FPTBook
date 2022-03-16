@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\FPTBook</_PublishTargetUrl>
-    <History>True|2022-03-14T20:21:19.4879249Z;True|2022-03-14T21:53:21.1610528+07:00;True|2022-03-14T13:22:18.9077332+07:00;False|2022-03-10T19:06:47.9984171+07:00;False|2022-03-10T19:06:37.8631296+07:00;True|2022-03-10T18:00:39.5934341+07:00;True|2022-03-09T20:42:35.3137536+07:00;True|2022-03-09T18:43:15.9489203+07:00;True|2022-03-09T17:04:12.9874910+07:00;False|2022-03-09T17:03:22.1999302+07:00;True|2022-03-09T11:01:02.6788756+07:00;True|2022-03-09T10:58:51.1270598+07:00;True|2022-03-09T10:54:13.0680170+07:00;True|2022-03-09T10:31:43.4593097+07:00;</History>
+    <History>True|2022-03-16T05:09:43.8988333Z;True|2022-03-16T12:04:20.9616137+07:00;True|2022-03-16T03:41:59.5070697+07:00;True|2022-03-16T03:28:15.8630225+07:00;True|2022-03-15T20:32:15.5504642+07:00;True|2022-03-15T03:21:19.4879249+07:00;True|2022-03-14T21:53:21.1610528+07:00;True|2022-03-14T13:22:18.9077332+07:00;False|2022-03-10T19:06:47.9984171+07:00;False|2022-03-10T19:06:37.8631296+07:00;True|2022-03-10T18:00:39.5934341+07:00;True|2022-03-09T20:42:35.3137536+07:00;True|2022-03-09T18:43:15.9489203+07:00;True|2022-03-09T17:04:12.9874910+07:00;False|2022-03-09T17:03:22.1999302+07:00;True|2022-03-09T11:01:02.6788756+07:00;True|2022-03-09T10:58:51.1270598+07:00;True|2022-03-09T10:54:13.0680170+07:00;True|2022-03-09T10:31:43.4593097+07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
@@ -141,10 +141,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/04/2020 16:04:48</publishTime>
     </File>
     <File Include="bin/Project8.dll">
-      <publishTime>03/15/2022 03:36:07</publishTime>
+      <publishTime>03/16/2022 12:27:19</publishTime>
     </File>
     <File Include="bin/Project8.pdb">
-      <publishTime>03/15/2022 03:36:07</publishTime>
+      <publishTime>03/16/2022 12:27:19</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>11/04/2020 16:04:48</publishTime>
@@ -2966,6 +2966,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>03/13/2022 15:40:26</publishTime>
     </File>
+    <File Include="Views/Shared/_Layout1.cshtml">
+      <publishTime>03/16/2022 12:11:24</publishTime>
+    </File>
     <File Include="Views/Shared/_LayoutUser.cshtml">
       <publishTime>03/15/2022 02:28:04</publishTime>
     </File>
@@ -2979,7 +2982,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/01/2022 08:52:19</publishTime>
     </File>
     <File Include="Views/User/EditUser.cshtml">
-      <publishTime>03/15/2022 02:24:54</publishTime>
+      <publishTime>03/16/2022 12:20:11</publishTime>
     </File>
     <File Include="Views/User/Login.cshtml">
       <publishTime>03/11/2022 08:27:37</publishTime>
@@ -2988,7 +2991,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/02/2022 22:15:21</publishTime>
     </File>
     <File Include="Views/User/Register.cshtml">
-      <publishTime>03/14/2022 22:04:59</publishTime>
+      <publishTime>03/16/2022 12:11:33</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>03/01/2022 08:53:55</publishTime>

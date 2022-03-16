@@ -83,8 +83,8 @@ namespace FPTBookstore.Areas.Admin.Controllers
                     }
                     if (!string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase) &&
                         !string.Equals(fileName, "png", StringComparison.OrdinalIgnoreCase) &&
-                        !string.Equals(fileName, "jpeg", StringComparison.OrdinalIgnoreCase) &&
-                        !string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase))
+                        !string.Equals(fileName, "jpeg", StringComparison.OrdinalIgnoreCase))
+                        
                     {
                         ViewBag.Alert = "Error file, please choose again";
                         return View();
@@ -183,8 +183,8 @@ namespace FPTBookstore.Areas.Admin.Controllers
                     var result = new AdminProcess().UpdateBook(book);
                     if (!string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase) &&
                         !string.Equals(fileName, "png", StringComparison.OrdinalIgnoreCase) &&
-                        !string.Equals(fileName, "jpeg", StringComparison.OrdinalIgnoreCase) &&
-                        !string.Equals(fileName, "jpg", StringComparison.OrdinalIgnoreCase))
+                        !string.Equals(fileName, "jpeg", StringComparison.OrdinalIgnoreCase))
+                        
                     {
                         ViewBag.Alert = "Error file, please choose again";
                         return View(book);
